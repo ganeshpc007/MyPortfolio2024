@@ -83,6 +83,7 @@ section > h2 {
 a {
   color: var(--color-primary);
   transition: var(--transition);
+  padding: 0px 10px;
 }
 
 a:hover {
@@ -129,6 +130,8 @@ img {
   transform: translate(-50%, -50%);
   transition: transform 0.1s ease-out;
   z-index: 9999;
+  left: -16px;
+  top: -16px;
 }
 
 .custom-cursor::after {

@@ -2,7 +2,7 @@ import React from "react";
 import "./header.css";
 import CTA from "./CTA";
 import HeaderSocials from "./HeaderSocials";
-import ME from '../../assets/me.png'
+import ME from "../../assets/me.png";
 
 const Header = () => {
   return (
@@ -19,10 +19,9 @@ const Header = () => {
           <span> </span>
           <span className="myName__letter">P</span>
           <span className="myName__letter">C</span>
-          {/* Ganesh P C */}
-          </h1>
+        </h1>
         <h5 className="text-light">Fullstack Developer</h5>
-
+        <button></button>
         <CTA />
         <HeaderSocials />
 
@@ -30,8 +29,9 @@ const Header = () => {
           <img src={ME} alt="me" />
         </div>
 
-        <a href="#contact" className="scroll__down" >Scroll Down</a>
-
+        <a href="#contact" className="scroll__down">
+          Scroll Down
+        </a>
       </div>
     </header>
   );
