@@ -1,6 +1,6 @@
 import React from "react";
 import "./about.css";
-import ME from "../../assets/me-about.jpg";
+import ME from "../../assets/my_pic2_png.png";
 import { FaAward } from "react-icons/fa";
 import { HiUsers } from "react-icons/hi";
 import { VscFolderLibrary } from "react-icons/vsc";
@@ -38,10 +38,12 @@ const About = () => {
             </article>
           </div>
           <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat
-            rerum inventore doloribus deleniti natus error quibusdam asperiores
-            veritatis aperiam magni eveniet quisquam repellendus qui voluptatum
-            optio, vero itaque numquam voluptate!
+            I'm a tech enthusiast 🌐 with a passion for staying on the cutting
+            edge of technology. Currently, I'm diving into the world of Web
+            development and exploring its potential for building robust and
+            scalable applications. With a knack for learning new technologies
+            🚀, I thrive on challenges 💪 and am always eager to gain hands-on
+            experience. Let's connect and create something awesome together!
           </p>
           <a href="#contact" className="btn btn-primary">
             Let's Talk
