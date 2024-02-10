@@ -1,4 +1,4 @@
-import React from "react";
+import { React, useState } from "react";
 import "./contact.css";
 import { MdOutlineEmail } from "react-icons/md";
 import { FaInstagram } from "react-icons/fa";
@@ -7,11 +7,13 @@ import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 
 const Contact = () => {
-  const form = useRef();
+  const [isMessageSending, setIsMessageSending] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [isFailed, setIsFailed] = useState(false);
+
+  const form = useRef(null);
   const sendEmail = (e) => {
-    const btn = document.querySelector("#sendMessage");
-    const formElement = document.querySelector("form");
-    btn.innerHTML = "Sending...";
+    setIsMessageSending(true);
     e.preventDefault();
     emailjs
       .sendForm(
@@ -22,32 +24,42 @@ const Contact = () => {
       )
       .then(
         (result) => {
-          console.log(result.text);
+          setIsMessageSending(false);
           if (result.text === "OK") {
-            btn.innerHTML = "Sent!";
+            setIsSuccess(true);
             setTimeout(() => {
-              btn.innerHTML = "Send Message";
-            }, 3000);
+              setIsSuccess(false);
+            }, 5000);
+            form.current.reset();
           } else {
-            btn.innerHTML = "Failed!";
+            setIsFailed(true);
             setTimeout(() => {
-              btn.innerHTML = "Send Message";
-            }, 3000);
+              setIsFailed(false);
+            }, 5000);
           }
         },
         (error) => {
+          setIsMessageSending(false);
           console.log(error.text);
-          btn.innerHTML = "Failed!";
+          setIsFailed(true);
           setTimeout(() => {
-            btn.innerHTML = "Send Message";
-          }, 3000);
+            setIsFailed(false);
+          }, 5000);
         }
       );
-    formElement.reset();
   };
 
   return (
     <section id="contact">
+      {isSuccess && (
+        <div className="notification success">
+          Thank you, message sent successfully!
+        </div>
+      )}
+      {isFailed && (
+        <div className="notification error">Failed to send message!</div>
+      )}
+
       <h5>Get In Touch</h5>
       <h2>Contact Me</h2>
 
@@ -57,7 +69,11 @@ const Contact = () => {
             <MdOutlineEmail className="contact__option-icon" />
             <h4>Email</h4>
             <h5 className="text-light">ganeshpc0077@gmail.com</h5>
-            <a href="mailto:ganeshpc0077@gmail.com" target="_blank"  rel="noreferrer">
+            <a
+              href="mailto:ganeshpc0077@gmail.com"
+              target="_blank"
+              rel="noreferrer"
+            >
               Send a message
             </a>
           </article>
@@ -65,7 +81,11 @@ const Contact = () => {
             <FaInstagram className="contact__option-icon" />
             <h4>Instagram</h4>
             <h5 className="text-light">ganeshpc007</h5>
-            <a href="https://instagram.com/ganeshpc007" target="_blank"  rel="noreferrer">
+            <a
+              href="https://instagram.com/ganeshpc007"
+              target="_blank"
+              rel="noreferrer"
+            >
               Send a message
             </a>
           </article>
@@ -73,7 +93,11 @@ const Contact = () => {
             <FaXTwitter className="contact__option-icon" />
             <h4>Twitter</h4>
             <h5 className="text-light">@GaneshPC007</h5>
-            <a href="https://twitter.com/GaneshPC007" target="_blank"  rel="noreferrer">
+            <a
+              href="https://twitter.com/GaneshPC007"
+              target="_blank"
+              rel="noreferrer"
+            >
               Send a message
             </a>
           </article>
@@ -102,7 +126,7 @@ const Contact = () => {
             autoComplete="off"
           ></textarea>
           <button type="submit" id="sendMessage" className="btn btn-primary">
-            Send Message
+            {isMessageSending ? "Sending..." : "Send Message"}
           </button>
         </form>
       </div>

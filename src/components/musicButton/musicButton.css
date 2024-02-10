@@ -58,7 +58,7 @@
 
 .music-bars.animate {
   .music-bar {
-    animation: bounce 2.2s ease infinite alternate;
+    animation: bounce 1.2s ease infinite alternate;
 
     &:nth-of-type(2) {
       animation-delay: -2.2s; /* Start at the end of animation */

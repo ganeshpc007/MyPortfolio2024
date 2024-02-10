@@ -7,21 +7,21 @@ import portfolio3 from "../../assets/portfolio3.jpg";
 const data = [
   {
     id: 1,
-    title: "Future Project 1 Title",
+    title: "New Project Comming Soon..",
     image: portfolio1,
     github: "https://github.com/",
     demo: "https://github.com/",
   },
   {
     id: 2,
-    title: "Future Project 2 Title",
+    title: "Future Project 1",
     image: portfolio2,
     github: "https://github.com/",
     demo: "https://github.com/",
   },
   {
     id: 3,
-    title: "Future Project 3 Title",
+    title: "Future Project 2",
     image: portfolio3,
     github: "https://github.com/",
     demo: "https://github.com/",
