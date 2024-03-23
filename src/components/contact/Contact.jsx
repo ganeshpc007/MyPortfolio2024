@@ -4,12 +4,16 @@ import { MdOutlineEmail } from "react-icons/md";
 import { FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { useRef } from "react";
-import emailjs from "@emailjs/browser";
+// import emailjs from "@emailjs/browser";
+import emailjs from "emailjs-com";
+import { init } from "emailjs-com";
 
 const Contact = () => {
   const [isMessageSending, setIsMessageSending] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [isFailed, setIsFailed] = useState(false);
+
+  init(process.env.REACT_APP_EMAILJS_USER_ID);
 
   const form = useRef(null);
   const sendEmail = (e) => {
@@ -17,10 +21,9 @@ const Contact = () => {
     e.preventDefault();
     emailjs
       .sendForm(
-        "service_pf79zwu",
-        "template_td3huwe",
-        form.current,
-        "el2l-PAtOfI80gTh3"
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        form.current
       )
       .then(
         (result) => {
