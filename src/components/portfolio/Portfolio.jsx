@@ -1,17 +1,24 @@
-import { useState } from "react";
 import "./portfolio.css";
 import codeXchange from "../../assets/codeXchange.jpg";
+import portfolio1 from "../../assets/portfolio1.jpg";
 import portfolio2 from "../../assets/portfolio2.jpg";
 import portfolio3 from "../../assets/portfolio3.jpg";
 
 const data = [
   {
     id: 1,
-    title: "CodeXchange",
-    image: codeXchange,
+    title: "Project comming soon",
+    image: portfolio1,
     github: "https://github.com/",
-    demo: "https://code-xchange.vercel.app/",
+    demo: "https://github.com/",
   },
+  // {
+  //   id: 1,
+  //   title: "CodeXchange",
+  //   image: codeXchange,
+  //   github: "https://github.com/",
+  //   demo: "https://code-xchange.vercel.app/",
+  // },
   {
     id: 2,
     title: "Future Project 1",
