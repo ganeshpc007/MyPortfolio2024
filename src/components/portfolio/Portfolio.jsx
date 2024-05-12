@@ -1,16 +1,16 @@
-import React from "react";
+import { useState } from "react";
 import "./portfolio.css";
-import portfolio1 from "../../assets/portfolio1.jpg";
+import codeXchange from "../../assets/codeXchange.jpg";
 import portfolio2 from "../../assets/portfolio2.jpg";
 import portfolio3 from "../../assets/portfolio3.jpg";
 
 const data = [
   {
     id: 1,
-    title: "New Project Comming Soon..",
-    image: portfolio1,
+    title: "CodeXchange",
+    image: codeXchange,
     github: "https://github.com/",
-    demo: "https://github.com/",
+    demo: "https://code-xchange.vercel.app/",
   },
   {
     id: 2,
@@ -42,9 +42,9 @@ const Portfolio = () => {
               </div>
               <h3>{title}</h3>
               <div className="portfolio__item-cta">
-                <a href={github} className="btn" target="_blanck">
-                  Github
-                </a>
+                {/* <a href={github} className="btn" target="_blanck">
+                Github
+              </a> */}
                 <a href={demo} className="btn btn-primary" target="_blanck">
                   Live Demo
                 </a>
