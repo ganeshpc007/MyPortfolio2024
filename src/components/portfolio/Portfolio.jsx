@@ -7,10 +7,10 @@ import portfolio3 from "../../assets/portfolio3.jpg";
 const data = [
   {
     id: 1,
-    title: "Project comming soon",
-    image: portfolio1,
+    title: "Code-Xchange (Code Sharing App)",
+    image: codeXchange,
     github: "https://github.com/",
-    demo: "https://github.com/",
+    demo: "https://code-xchange.vercel.app",
   },
   // {
   //   id: 1,
@@ -53,7 +53,7 @@ const Portfolio = () => {
                 Github
               </a> */}
                 <a href={demo} className="btn btn-primary" target="_blanck">
-                  Live Demo
+                  Access
                 </a>
               </div>
             </article>
